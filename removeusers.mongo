@@ -1,0 +1,7 @@
+db.users.remove({
+    $and: [
+        {"name": {$ne: "j"}},
+        {"name": {$ne: "James Kizer"}},
+        {"name": {$ne: "Sean Herman"}}
+    ]
+});

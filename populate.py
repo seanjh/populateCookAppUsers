@@ -5,8 +5,8 @@ import requests
 
 names_file = 'data/names.txt'
 domains_file = 'data/domains.txt'
-web_hostname = 'http://127.0.0.1:3000'
-register = '/register'
+HOSTNAME = 'http://dry-beach-2224-staging.herokuapp.com'
+#HOSTNAME = 'http://127.0.0.1:3000'
 
 
 class User(object):
@@ -186,7 +186,7 @@ def main():
 
     # add users to site
     session = requests.Session()
-    ctrl = CookAppSite(session)
+    ctrl = CookAppSite(session, hostname=HOSTNAME)
     for user in users:
         user_obj = ctrl.add_user(user.user_object)
         if user_obj:
